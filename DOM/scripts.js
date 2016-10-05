@@ -3,10 +3,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   //create a nice message button
 var btn = document.createElement("button");
 var text = document.createTextNode("Nice Message Here");
-btn.style.margin = '20px';
-btn.style.display = 'inline';
 btn.appendChild(text);
 document.body.appendChild(btn);
+btn.class = 'button';
 
 //event listener for button click
 btn.addEventListener('click', function() {
@@ -52,10 +51,9 @@ var random = document.getElementById('random')
 
 //create a name in span button
 var btn2 = document.createElement("button");
-    btn2.innerHTML = "I'm button#2";
-    btn2.style.margin = '20px';
-    btn2.style.display = 'inline';
+    btn2.innerHTML = "Create a span in a div";
     document.body.appendChild(btn2);
+    btn2.class = 'button';
 
     
 
@@ -84,10 +82,11 @@ var friends = ["Rachel", "Jon", "Lauren", "Kayla", "John", "Tom", "Leah", "Lael"
     var liButton = document.getElementById("liButton");
     liButton.onclick = function() {
         var output = friends.shift();
-    var nameList = document.getElementById("nameList");
-    var newListItem = document.createElement('li');
-    newListItem.innerHTML = output;
+        var nameList = document.getElementById("nameList");
+        var newListItem = document.createElement('li');
+        newListItem.innerHTML = output;
         nameList.appendChild(newListItem);
+            
     };
 
 });//end of DOMContentLoaded
