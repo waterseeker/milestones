@@ -41,12 +41,12 @@ $('#random').click(function() {
 function nameDiv() {
     var $div = $('<div />', {
       type: 'div',
-      text: 'This is the name div',
       id: 'nameDiv'
     });
+    $('body').append($div);
     return $div;
   }
-  $('body').append(nameDiv());
+  
 
   function nameSpan() {
     var $span = $('<span />', {
@@ -60,7 +60,8 @@ function nameDiv() {
 
 $(function () {
   function addName() {
-    '#nameSpan'.appendTo'#nameDiv';
+    var div = nameDiv();
+    $(div).append(nameSpan());
   }
   function nameButton() {
     var $btn = $('<button />', {
