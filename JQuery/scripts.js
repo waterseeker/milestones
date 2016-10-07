@@ -79,7 +79,7 @@ $(function () {
 var friends = ["Rachel", "Jon", "Lauren", "Kayla", "John", "Tom", "Leah", "Lael", "Brittany", "Alexandra"];
 
 $("#liButton").click (function() {
-  var aFriend = friends.pop();
+  var aFriend = friends.shift();
   var li = $('<li/>');
   li.text(aFriend);
   var listOfFriends = $('#nameList');
