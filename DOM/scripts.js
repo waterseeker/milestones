@@ -53,9 +53,7 @@ var random = document.getElementById('random')
 var btn2 = document.createElement("button");
     btn2.innerHTML = "Create a span in a div";
     document.body.appendChild(btn2);
-    btn2.class = 'button';
-
-    
+    btn2.class = 'button';   
 
 //create an empty div
 var div2 = document.createElement("div");

@@ -1,37 +1,90 @@
 $(document).ready(function() {
+// #1 nice message alert
+$(function () {
+  function NiceMessage() {
+    alert("Isn't this a nice message?");
+  }
+  function createNiceMessageButton() {
+    var $btn = $('<button />', {
+      type: 'button',
+      text: 'This is the nice message button',
+      id: 'btn_nicemessage',
+      class: 'button'
+    }).click(NiceMessage);
+    return $btn;
+  }
+  $('body').append(createNiceMessageButton());
+});
 
-    //create a nice message button
-var btn = document.createElement("button");
-var text = document.createTextNode("Nice Message Here");
-btn.style.margin = '20px';
-btn.style.display = 'inline';
-btn.appendChild(text);
-document.body.appendChild(btn);
-    //event listener for button click
-btn.addEventListener('click', function() {
-    alert ("Isn't this a nice message?")});
+//#2 alert text box function and click event
+  
+$('#alertButton').click(function(){
+    var field = document.getElementById('input').value;
+    alert(field);
+});
 
-//mouseover and mouseout on div colorChangey
-$( "#colorChangey" ).mouseover(function() {
+//#3 mouseover and mouseout on div colorChangey
+$('#colorChangey').mouseover(function() {
   this.style.backgroundColor = 'green'
     });
     
-$("#colorChangey").mouseout = function() {
+$('#colorChangey').mouseout(function() {
     this.style.backgroundColor = 'yellow';
-    };
-//get random color
-var getRandomColor = function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-};//end of getRandomColor
+    });
+//#4 change color of p 
+$('#random').click(function() {
+   var randomColorChange = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+    $('#random').css('color', randomColorChange);
+    });
 
-//assign random color to .random when it is clicked
-$('.random').click(function(){
-  $(this).color(getRandomColor);
+//#5 create a div and a button that appends your name inside the div
+function nameDiv() {
+    var $div = $('<div />', {
+      type: 'div',
+      text: 'This is the name div',
+      id: 'nameDiv'
+    });
+    return $div;
+  }
+  $('body').append(nameDiv());
+
+  function nameSpan() {
+    var $span = $('<span />', {
+      type: 'span',
+      text: 'Wayne Burris',
+      id: 'nameSpan'
+    });
+    return $span;
+  }
+
+
+$(function () {
+  function addName() {
+    '#nameSpan'.appendTo'#nameDiv';
+  }
+  function nameButton() {
+    var $btn = $('<button />', {
+      type: 'button',
+      text: 'This is the name button',
+      id: 'nameButton'
+    }).click(addName);
+    return $btn;
+  }
+  $('body').append(nameButton()); 
 });
+
+//#6
+
+var friends = ["Rachel", "Jon", "Lauren", "Kayla", "John", "Tom", "Leah", "Lael", "Brittany", "Alexandra"];
+
+$("#liButton").click (function() {
+  var aFriend = friends.pop();
+  var li = $('<li/>');
+  li.text(aFriend);
+  var listOfFriends = $('#nameList');
+  listOfFriends.append(li);
+});
+
+
 
 });//end of document.ready
